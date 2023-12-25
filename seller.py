@@ -12,10 +12,11 @@ logger = logging.getLogger(__file__)
 
 
 def get_product_list(last_id, client_id, seller_token):
-    """Получить список товаров магазина озон
+    """Получить список товаров магазина озон.
 
     Args:
-        last_id (str): id последнего продукта в предыдущем запросе для пагинации
+        last_id (str): id последнего продукта в предыдущем 
+        запросе для пагинации
         client_id (str): id клиента для аутентифицации API Ozon.
         seller_token (str): токен продавца для аутентификации API Ozon.
 
@@ -24,7 +25,8 @@ def get_product_list(last_id, client_id, seller_token):
 
     Examples:
         >>> get_product_list(last_id, client_id, seller_token)
-        {"result" : {"items": [{"offer_id: "78910", "name": "Casio7893"}], "total": 1500, "last_id": "78910"}}
+        {"result" : {"items": [{"offer_id: "78910", "name": "Casio7893"}],
+        "total": 1500, "last_id": "78910"}}
 
     """
     url = "https://api-seller.ozon.ru/v2/product/list"
@@ -46,7 +48,7 @@ def get_product_list(last_id, client_id, seller_token):
 
 
 def get_offer_ids(client_id, seller_token):
-    """Получить артикулы товаров магазина озон
+    """Получить артикулы товаров магазина озон.
     
     Args:
         client_id (str): id клиента для аутентифицации API Ozon.
@@ -76,7 +78,7 @@ def get_offer_ids(client_id, seller_token):
 
 
 def update_price(prices: list, client_id, seller_token):
-    """Обновить цены товаров
+    """Обновить цены товаров.
     
     Args:
         prices (list): спикок цен на товары
@@ -103,7 +105,7 @@ def update_price(prices: list, client_id, seller_token):
 
 
 def update_stocks(stocks: list, client_id, seller_token):
-    """Обновить остатки
+    """Обновить остатки.
     
     Args:
         prices (list): спикок цен на товары
@@ -130,7 +132,7 @@ def update_stocks(stocks: list, client_id, seller_token):
 
 
 def download_stock():
-    """Скачать файл ostatki с сайта casio
+    """Скачать файл ostatki с сайта casio.
     
     Returns:
         dict: словарь с данными об остатках часов Casio на складе
@@ -156,10 +158,11 @@ def download_stock():
 
 
 def create_stocks(watch_remnants, offer_ids):
-    """Создать словарь с данными об остатках на складе
+    """Создать словарь с данными об остатках на складе.
 
     Args:
-        watch_remnants (dict): словарь с данными об остатках часов Casio на складе
+        watch_remnants (dict): словарь с данными об остатках часов 
+        Casio на складе
         offer_ids: список артикулов
 
     Returns:
@@ -186,10 +189,11 @@ def create_stocks(watch_remnants, offer_ids):
 
 
 def create_prices(watch_remnants, offer_ids):
-    """Сформировать цены
+    """Сформировать цены.
 
     Args:
-        watch_remnants (dict): словарь с данными об остатках часов Casio на складе
+        watch_remnants (dict): словарь с данными об остатках часов
+        Casio на складе
         offer_ids: список артикулов
 
     Returns:
@@ -211,7 +215,7 @@ def create_prices(watch_remnants, offer_ids):
 
 
 def price_conversion(price: str) -> str:
-    """Преобразовать цену. Пример: 5'990.00 руб. -> 5990
+    """Преобразовать цену. Пример: 5'990.00 руб. -> 5990.
     
     Args:
         price(str): цена в формате сроки для преобразования
@@ -228,7 +232,7 @@ def price_conversion(price: str) -> str:
 
 
 def divide(lst: list, n: int):
-    """Разделить список lst на части по n элементов
+    """Разделить список lst на части по n элементов.
     
     Args:
         lst (list): список
@@ -247,10 +251,11 @@ def divide(lst: list, n: int):
 
 
 async def upload_prices(watch_remnants, client_id, seller_token):
-    """ Загрузить словарь с ценами
+    """Загрузить словарь с ценами.
 
     Args:
-        watch_remnants (dict): словарь с данными об остатках часов Casio на складе 
+        watch_remnants (dict): словарь с данными об остатках часов 
+        Casio на складе 
         client_id (str): id клиента для аутентифицации API Ozon.
         seller_token (str): токен продавца для аутентификации API Ozon.
 
@@ -266,10 +271,11 @@ async def upload_prices(watch_remnants, client_id, seller_token):
 
 
 async def upload_stocks(watch_remnants, client_id, seller_token):
-    """ Загрузить словарь с ценами
+    """Загрузить словарь с ценами.
 
     Args:
-        watch_remnants (dict): словарь с данными об остатках часов Casio на складе 
+        watch_remnants (dict): словарь с данными об остатках часов
+        Casio на складе 
         client_id (str): id клиента для аутентифицации API Ozon.
         seller_token (str): токен продавца для аутентификации API Ozon.
 
