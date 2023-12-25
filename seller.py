@@ -162,7 +162,7 @@ def create_stocks(watch_remnants, offer_ids):
 
     Args:
         watch_remnants (dict): словарь с данными об остатках часов 
-        Casio на складе
+            Casio на складе
         offer_ids: список артикулов
 
     Returns:
@@ -193,11 +193,11 @@ def create_prices(watch_remnants, offer_ids):
 
     Args:
         watch_remnants (dict): словарь с данными об остатках часов
-        Casio на складе
+            Casio на складе
         offer_ids: список артикулов
 
     Returns:
-        dict: словарь с ценами на часы 
+        list: список словарей с ценами на часы 
 
     """
     prices = []
@@ -255,7 +255,7 @@ async def upload_prices(watch_remnants, client_id, seller_token):
 
     Args:
         watch_remnants (dict): словарь с данными об остатках часов 
-        Casio на складе 
+            Casio на складе 
         client_id (str): id клиента для аутентифицации API Ozon.
         seller_token (str): токен продавца для аутентификации API Ozon.
 
@@ -275,7 +275,7 @@ async def upload_stocks(watch_remnants, client_id, seller_token):
 
     Args:
         watch_remnants (dict): словарь с данными об остатках часов
-        Casio на складе 
+            Casio на складе 
         client_id (str): id клиента для аутентифицации API Ozon.
         seller_token (str): токен продавца для аутентификации API Ozon.
 
